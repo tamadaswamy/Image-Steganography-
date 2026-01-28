@@ -1,0 +1,51 @@
+# Image Steganography Application in C
+
+## 📌 Project Description
+This project implements **Image Steganography** using the C programming language.
+It hides secret text data inside a BMP image file using **bitwise manipulation**
+and later retrieves the hidden data without affecting the visual appearance of the image.
+
+---
+
+## 🛠 Technologies Used
+- C Programming
+- File Handling
+- Bitwise Operations
+- Structures & Pointers
+- BMP Image Format
+
+---
+
+## 📂 Project Files
+- encode.c / encode.h → Encoding logic
+- decode.c / decode.h → Decoding logic
+- main.c → Main driver program
+- common.h, types.h → Common definitions
+- secret.txt → Input secret message
+- output.txt → Decoded output
+- sample.bmp → Source image
+
+---
+
+## 🔐 Encoding Process
+1. Read the source BMP image file
+2. Read the secret text from `secret.txt`
+3. Hide the secret data into the image using LSB (Least Significant Bit)
+4. Generate a new encoded image file
+
+---
+
+## 🔓 Decoding Process
+1. Read the encoded BMP image
+2. Extract hidden bits from the image
+3. Reconstruct the original secret message
+4. Store the decoded data in `output.txt`
+
+---
+
+## ▶️ How to Compile and Run
+
+### Encoding
+```bash
+gcc main.c encode.c decode.c -o steg
+./steg -e sample.bmp secret.txt encoded.bmp
